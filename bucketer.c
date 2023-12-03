@@ -72,7 +72,7 @@ void testBucketingByHealth() {
   struct CountsBySoH counts6 = countBatteriesByHealth(presentCapacities6, numberOfBatteries6);
   printf("\nCounts: Healthy = %d, Exchange = %d, Failed = %d\n", counts6.healthy, counts6.exchange, counts6.failed);
   
-}
+
   
 }
 

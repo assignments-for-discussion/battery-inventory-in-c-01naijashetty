@@ -11,10 +11,12 @@ struct CountsBySoH countBatteriesByHealth(const int* presentCapacities, int nBat
   struct CountsBySoH counts = {0, 0, 0};
    // Rated capacity of a new battery
   int ratedCapacity = 120;
-
+  printf("Battery Information:\n")
   for (int i = 0; i < nBatteries; ++i) {
      // Compute State-of-Health (SoH)
     float soh = (float)presentCapacities[i] / ratedCapacity * 100;
+     // Display SoH for each battery
+    printf("Battery %d: SoH = %.2f%%\n", i + 1, soh);
     // Classify batteries based on SoH
     if (soh > 80) {
       counts.healthy++;
@@ -36,6 +38,7 @@ void testBucketingByHealth() {
   assert(counts.healthy == 2);
   assert(counts.exchange == 3);
   assert(counts.failed == 1);
+  printf("\nCounts: Healthy = %d, Exchange = %d, Failed = %d\n", counts.healthy, counts.exchange, counts.failed);
   printf("Done counting :)\n");
 }
 

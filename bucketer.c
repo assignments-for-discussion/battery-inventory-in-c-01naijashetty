@@ -21,7 +21,7 @@ struct CountsBySoH countBatteriesByHealth(const int* presentCapacities, int nBat
   printf("Battery Information:\n");
   for (int i = 0; i < nBatteries; ++i) {
   // Compute State-of-Health (SoH)
-  float soh = (float)presentCapacities[i] / ratedCapacity * 100;
+  float soh = calculateSoH(presentCapacities[i], ratedCapacity);
   // Display SoH for each battery
   printf("Battery %d: SoH = %.2f%%\n", i + 1, soh);
   // Classify batteries based on SoH
